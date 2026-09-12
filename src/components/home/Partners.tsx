@@ -19,15 +19,18 @@ export default function Partners() {
       </div>
 
       <div className="mt-12 lg:mt-16">
-        <Marquee duration={28} pauseOnHover>
-          {partners.map((p) => (
+        <Marquee duration={30} pauseOnHover>
+          {partners.map((logo, i) => (
             <div
-              key={p}
-              className="mx-4 flex h-[120px] w-[200px] items-center justify-center rounded-2xl border border-ink/10 lg:h-[160px] lg:w-[240px]"
+              key={i}
+              className="mx-3 flex h-[130px] w-[200px] items-center justify-center rounded-2xl border border-ink/10 lg:h-[160px] lg:w-[240px]"
             >
-              <span className="text-[22px] font-medium tracking-tight text-ink/70 lg:text-[26px]">
-                {p}
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={logo}
+                alt="Partner logo"
+                className="h-9 w-auto max-w-[62%] object-contain opacity-60 transition-opacity duration-300 hover:opacity-100 lg:h-11"
+              />
             </div>
           ))}
         </Marquee>

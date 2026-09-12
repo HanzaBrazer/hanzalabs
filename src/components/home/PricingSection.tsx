@@ -1,5 +1,5 @@
 import Reveal from "@/components/ui/Reveal";
-import PricingTable from "./PricingTable";
+import PricingPlans from "@/components/pricing/PricingPlans";
 
 export default function PricingSection() {
   return (
@@ -16,7 +16,7 @@ export default function PricingSection() {
           </Reveal>
         </div>
         <Reveal delay={0.05}>
-          <PricingTable />
+          <PricingPlans ctaHref="/pricing-single" />
         </Reveal>
       </div>
     </section>

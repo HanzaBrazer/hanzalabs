@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PricingDetail from "@/components/pricing/PricingDetail";
+import PricingPlans from "@/components/pricing/PricingPlans";
 import Faq from "@/components/home/Faq";
 import Reveal from "@/components/ui/Reveal";
 
@@ -19,7 +19,7 @@ export default function PricingSinglePage() {
           </Reveal>
 
           <Reveal className="mt-8" delay={0.05}>
-            <PricingDetail />
+            <PricingPlans ctaHref="/contact" />
           </Reveal>
 
           {/* editorial */}

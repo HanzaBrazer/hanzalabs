@@ -61,14 +61,13 @@ export const socials: NavLink[] = [
 ];
 
 export const partners = [
-  "Northwind",
-  "Lumine",
-  "Vertex",
-  "Aeon",
-  "Quanta",
-  "Pulse",
-  "Orbit",
-  "Stackly",
+  "/partners/logo-24.svg",
+  "/partners/logo-21.svg",
+  "/partners/logo-70.svg",
+  "/partners/Frame.svg",
+  "/partners/Frame-1.svg",
+  "/partners/Frame-2.svg",
+  "/partners/Frame-3.svg",
 ];
 
 export type Project = {
@@ -88,7 +87,7 @@ export const projects: Project[] = [
     description:
       "A sleek and functional redesign focused on product storytelling.",
     tags: ["#WebDesign", "#UIUX", "#ProductNarrative"],
-    image: "/images/work-1.jpg",
+    image: "/images/project-1.webp",
     year: "2025",
     services: ["Web Design", "UI/UX", "Art Direction"],
   },
@@ -98,7 +97,7 @@ export const projects: Project[] = [
     description:
       "A sleek and functional redesign focused on product storytelling.",
     tags: ["#WebDesign", "#UIUX", "#ModernWeb"],
-    image: "/images/work-2.jpg",
+    image: "/images/project-2.webp",
     year: "2025",
     services: ["Web Design", "Branding", "Motion"],
   },
@@ -108,7 +107,7 @@ export const projects: Project[] = [
     description:
       "A sleek and functional redesign focused on product storytelling.",
     tags: ["#Design", "#UIUX", "#ModernWeb"],
-    image: "/images/work-3.jpg",
+    image: "/images/project-3.webp",
     year: "2024",
     services: ["Product Design", "Design System"],
   },
@@ -118,7 +117,7 @@ export const projects: Project[] = [
     description:
       "A sleek and functional redesign focused on product storytelling.",
     tags: ["#WebDesign", "#UIUX", "#ProductDesign"],
-    image: "/images/work-4.jpg",
+    image: "/images/project-4.webp",
     year: "2024",
     services: ["Web Design", "SaaS", "UI/UX"],
   },
@@ -128,7 +127,7 @@ export const projects: Project[] = [
     description:
       "A sleek and functional redesign focused on product storytelling.",
     tags: ["#WebDesign", "#UIUX", "#ModernWeb"],
-    image: "/images/work-5.jpg",
+    image: "/images/project-5.webp",
     year: "2023",
     services: ["Brand Identity", "Web Design"],
   },
@@ -141,7 +140,7 @@ export const workProjects: Project[] = [
     description:
       "A full identity and website redesign for an art studio, emphasizing design.",
     tags: ["#WebDesign", "#UIUX", "#ProductNarrative"],
-    image: "/images/work-1.jpg",
+    image: "/images/project-1.webp",
     year: "2025",
     services: ["Identity", "Web Design"],
   },
@@ -151,7 +150,7 @@ export const workProjects: Project[] = [
     description:
       "Designed a fintech platform dashboard with clear data visualization.",
     tags: ["#WebDesign", "#UIUX", "#SaaS"],
-    image: "/images/work-2.jpg",
+    image: "/images/project-2.webp",
     year: "2025",
     services: ["SaaS", "UI/UX"],
   },
@@ -160,7 +159,7 @@ export const workProjects: Project[] = [
     name: "Glimmer",
     description: "Developed a corporate website with modern aesthetics design.",
     tags: ["#WebDesign", "#UIUX", "#ModernWeb"],
-    image: "/images/work-3.jpg",
+    image: "/images/project-3.webp",
     year: "2024",
     services: ["Web Design", "Branding"],
   },
@@ -169,7 +168,7 @@ export const workProjects: Project[] = [
     name: "Flux Creative",
     description: "Product discovery, and visually striking product pages.",
     tags: ["#WebDesign", "#UIUX", "#ProductDesign"],
-    image: "/images/work-4.jpg",
+    image: "/images/project-4.webp",
     year: "2024",
     services: ["Product Design", "UI/UX"],
   },
@@ -178,7 +177,7 @@ export const workProjects: Project[] = [
     name: "Cosmart App",
     description: "Built a dynamic, interactive portfolio site with smooth scrolling.",
     tags: ["#WebDesign", "#UIUX", "#Interaction"],
-    image: "/images/work-5.jpg",
+    image: "/images/project-5.webp",
     year: "2023",
     services: ["Web Design", "Motion"],
   },
@@ -334,28 +333,28 @@ export const blogPosts: BlogPost[] = [
     title: "The art of building seamless user journeys",
     tags: ["#DesignStrategy", "#UIUX"],
     date: "October 14, 2025",
-    image: "/images/blog-1.jpg",
+    image: "/images/blog-1.webp",
   },
   {
     slug: "concept-to-launch",
     title: "From concept to launch — A designer's Playbook",
     tags: ["#DesignStrategy", "#UIUX"],
     date: "October 14, 2025",
-    image: "/images/blog-2.jpg",
+    image: "/images/blog-2.webp",
   },
   {
     slug: "strategic-design-elevates-brands",
     title: "How strategic design elevates brands.",
     tags: ["#DesignStrategy", "#UIUX"],
     date: "October 14, 2025",
-    image: "/images/blog-3.jpg",
+    image: "/images/blog-3.webp",
   },
   {
     slug: "simplicity-that-sells",
     title: "Simplicity that sells — power of minimal Design",
     tags: ["#DesignStrategy", "#UIUX"],
     date: "October 14, 2025",
-    image: "/images/blog-4.jpg",
+    image: "/images/blog-4.webp",
   },
 ];
 
@@ -369,40 +368,44 @@ export type PricingPlan = {
   features: string[];
 };
 
-export const pricingPlans: PricingPlan[] = [
-  {
+export const pricingDescription =
+  "Designed to help ambitious brands launch faster.";
+
+export type PricingFeature = { label: string; standard: boolean };
+
+// Order fills the left column first (0-4), then the right column (5-9),
+// matching the Figma layout. `standard:false` = struck-through on Standard.
+export const pricingFeatures: PricingFeature[] = [
+  { label: "Custom website design & strategy", standard: true },
+  { label: "Premium UI/UX experience", standard: true },
+  { label: "Responsive & mobile-first layout", standard: false },
+  { label: "Brand identity alignment", standard: true },
+  { label: "Conversion-optimized structure", standard: true },
+  { label: "Creative direction & art guidance", standard: false },
+  { label: "SEO-ready build foundation", standard: true },
+  { label: "Modern animation & micro-interactions", standard: false },
+  { label: "Dedicated design manager", standard: true },
+  { label: "Lifetime update support", standard: true },
+];
+
+export const pricingPlans = {
+  standard: {
     id: "standard",
     name: "Standard",
-    price: "$2,400",
-    period: "/ month",
-    description: "Designed to help ambitious brands launch faster.",
-    featured: false,
-    features: [
-      "Custom website design & strategy",
-      "Premium UI/UX experience",
-      "Up to 6 unique pages",
-      "Responsive across all devices",
-      "2 rounds of revisions",
-      "Developer-ready hand-off",
-    ],
+    price: "$2,499",
+    period: "/ Project",
+    graphic: "/images/star.webp",
+    icon: "/icons/standard.svg",
   },
-  {
+  premium: {
     id: "premium",
     name: "Premium",
-    price: "$4,800",
-    period: "/ month",
-    description: "Designed to help ambitious brands launch faster.",
-    featured: true,
-    features: [
-      "Everything in Standard",
-      "Dedicated design manager",
-      "Unlimited pages & components",
-      "Design system & brand guidelines",
-      "Motion & interaction design",
-      "Lifetime update support",
-    ],
+    price: "$9,999",
+    period: "/ Project",
+    graphic: "/images/diamond.webp",
+    icon: "/icons/premium.svg",
   },
-];
+} as const;
 
 export type TeamMember = { name: string; role: string; image: string };
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PricingTable from "@/components/home/PricingTable";
+import PricingPlans from "@/components/pricing/PricingPlans";
 import Faq from "@/components/home/Faq";
 import Testimonials from "@/components/home/Testimonials";
 import Reveal from "@/components/ui/Reveal";
@@ -23,7 +23,7 @@ export default function PricingPage() {
           </h1>
         </Reveal>
         <div className="mt-12 lg:mt-16">
-          <PricingTable />
+          <PricingPlans ctaHref="/pricing-single" />
         </div>
       </section>
       <Faq />

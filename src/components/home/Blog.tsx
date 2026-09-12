@@ -59,9 +59,10 @@ export default function Blog() {
                   <h3 className="mt-4 text-[20px] font-medium leading-snug tracking-tight">
                     {post.title}
                   </h3>
-                  <div className="mt-5 border-t border-ink/10 pt-3">
+                  <div className="mt-6">
                     <p className="text-[13px] text-ink/40">Published</p>
-                    <p className="text-[13px] text-ink/60">{post.date}</p>
+                    <p className="mt-1 text-[14px] text-ink/70">{post.date}</p>
+                    <div className="mt-4 h-px w-full bg-ink/12" />
                   </div>
                 </div>
               </Link>
