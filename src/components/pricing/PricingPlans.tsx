@@ -123,7 +123,7 @@ export default function PricingPlans({ ctaHref = "/contact" }: { ctaHref?: strin
         <Link
           href={ctaHref}
           data-cursor="hover"
-          className="group mt-8 flex h-14 w-full items-center justify-center gap-2 rounded-pill bg-primary text-[15px] font-medium text-ink lg:mt-auto"
+          className="group mt-8 flex h-14 w-full items-center justify-center gap-2 rounded-xl bg-primary text-[15px] font-medium text-ink lg:mt-auto"
         >
           Start Project
           <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />

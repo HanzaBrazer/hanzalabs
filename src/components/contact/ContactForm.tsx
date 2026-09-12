@@ -80,7 +80,7 @@ export default function ContactForm() {
       <button
         type="submit"
         data-cursor="hover"
-        className="group mt-6 flex h-14 w-full items-center justify-center gap-2 rounded-pill bg-ink text-[15px] font-medium text-white transition-colors hover:bg-ink/90"
+        className="group mt-6 flex h-14 w-full items-center justify-center gap-2 rounded-xl bg-ink text-[15px] font-medium text-white transition-colors hover:bg-ink/90"
       >
         {sent ? "Message sent ✓" : "Send Message"}
         {!sent && (

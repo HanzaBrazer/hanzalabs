@@ -9,7 +9,7 @@ type Variant = "solid" | "light" | "outline";
 type Size = "md" | "lg";
 
 const base =
-  "group/btn relative inline-flex items-center justify-center overflow-hidden rounded-pill font-medium transition-colors duration-300 ease-smooth";
+  "group/btn relative inline-flex items-center justify-center overflow-hidden rounded-xl font-medium transition-colors duration-300 ease-smooth";
 
 const variants: Record<Variant, string> = {
   solid: "bg-ink text-white",
@@ -74,7 +74,7 @@ export default function Button({
       <span
         aria-hidden
         className={cn(
-          "absolute inset-0 z-0 translate-y-[101%] rounded-pill transition-transform duration-500 ease-smooth group-hover/btn:translate-y-0",
+          "absolute inset-0 z-0 translate-y-[101%] rounded-xl transition-transform duration-500 ease-smooth group-hover/btn:translate-y-0",
           wipe[variant]
         )}
       />

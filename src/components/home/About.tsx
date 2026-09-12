@@ -53,7 +53,7 @@ export default function About() {
               <Link
                 href="/contact"
                 data-cursor="hover"
-                className="group flex h-16 w-full items-center justify-center gap-2 rounded-pill bg-primary text-[15px] font-medium text-ink"
+                className="group flex h-16 w-full items-center justify-center gap-2 rounded-xl bg-primary text-[15px] font-medium text-ink"
               >
                 Let&apos;s Talk
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />

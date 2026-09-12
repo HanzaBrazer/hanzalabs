@@ -14,7 +14,7 @@ function FLink({ href, label }: { href: string; label: string }) {
       href={disabled ? "#" : href}
       onClick={(e) => disabled && e.preventDefault()}
       data-cursor="hover"
-      className="text-[15px] text-ink/60 transition-colors hover:text-ink"
+      className="text-[16px] text-ink transition-opacity hover:opacity-60"
     >
       {label}
     </Link>
@@ -40,7 +40,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col items-start justify-between gap-8 lg:col-span-8 lg:flex-row lg:items-center">
               <Reveal variant="mask" className="max-w-[600px]">
-                <h2 className="text-h3 lg:text-h2">
+                <h2 className="text-h3">
                   Start your next big creative journey with HanzaLabs
                 </h2>
               </Reveal>
@@ -63,7 +63,7 @@ export default function Footer() {
                     e.preventDefault();
                     if (email) setSent(true);
                   }}
-                  className="mt-5 flex h-[48px] w-full max-w-[360px] items-center rounded-pill bg-ink/[0.05] pl-4 pr-1"
+                  className="mt-5 flex h-[48px] w-full max-w-[360px] items-center rounded-xl bg-ink/[0.05] pl-4 pr-1"
                 >
                   <input
                     type="email"
@@ -76,7 +76,7 @@ export default function Footer() {
                   <button
                     type="submit"
                     data-cursor="hover"
-                    className="flex h-[38px] items-center rounded-pill bg-ink px-4 text-[13px] font-medium text-white transition-colors hover:bg-ink/85"
+                    className="flex h-[38px] items-center rounded-lg bg-ink px-4 text-[13px] font-medium text-white transition-colors hover:bg-ink/85"
                   >
                     {sent ? "Joined ✓" : "Subscribe"}
                   </button>
@@ -101,7 +101,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noreferrer"
                       data-cursor="hover"
-                      className="text-[15px] text-ink/60 transition-colors hover:text-ink"
+                      className="text-[16px] text-ink transition-opacity hover:opacity-60"
                     >
                       {s.label}
                     </a>
