@@ -26,18 +26,26 @@ export default function Reveal({
   const MotionTag = motion[as] as typeof motion.div;
 
   if (variant === "mask") {
+    // The in-view trigger sits on the OUTER (un-transformed) wrapper so the
+    // IntersectionObserver reliably fires; the inner element does the slide.
     return (
-      <span className={`block overflow-hidden ${className ?? ""}`}>
+      <motion.span
+        className={`block overflow-hidden ${className ?? ""}`}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once, margin: "0px 0px -10% 0px" }}
+      >
         <motion.span
           className="block"
-          initial={{ y: "110%", opacity: 0 }}
-          whileInView={{ y: "0%", opacity: 1 }}
-          viewport={{ once, margin: "-10% 0px" }}
+          variants={{
+            hidden: { y: "110%", opacity: 0 },
+            show: { y: "0%", opacity: 1 },
+          }}
           transition={{ duration: 0.9, ease: easeSmooth, delay }}
         >
           {children}
         </motion.span>
-      </span>
+      </motion.span>
     );
   }
 
