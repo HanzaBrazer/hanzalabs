@@ -41,5 +41,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     };
   }, []);
 
-  return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
+  // "never" keeps reveal animations (which are transform-based) working even
+  // when the OS has "reduce motion" on, so headings never stay hidden.
+  return <MotionConfig reducedMotion="never">{children}</MotionConfig>;
 }
