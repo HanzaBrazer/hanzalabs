@@ -18,7 +18,7 @@ export default function PricingPage() {
           <p className="eyebrow mb-6">Pricing</p>
         </Reveal>
         <Reveal variant="mask">
-          <h1 className="max-w-[640px] text-h2">
+          <h1 className="max-w-[780px] text-h2">
             Simple plans designed to scale
           </h1>
         </Reveal>

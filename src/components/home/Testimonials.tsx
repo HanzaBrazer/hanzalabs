@@ -79,7 +79,7 @@ export default function Testimonials() {
             <p className="eyebrow mb-6">Testimonials</p>
           </Reveal>
           <Reveal variant="mask">
-            <h2 className="max-w-[900px] text-h3 lg:text-h2">
+            <h2 className="max-w-[1180px] text-h3 lg:text-h2">
               Discover how brands grew faster by trusting our design.
             </h2>
           </Reveal>

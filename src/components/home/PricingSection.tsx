@@ -10,7 +10,7 @@ export default function PricingSection() {
             <p className="eyebrow mb-6">Pricing</p>
           </Reveal>
           <Reveal variant="mask">
-            <h2 className="max-w-[620px] text-h3 lg:text-h2">
+            <h2 className="max-w-[780px] text-h3 lg:text-h2">
               Simple plans designed to scale
             </h2>
           </Reveal>
