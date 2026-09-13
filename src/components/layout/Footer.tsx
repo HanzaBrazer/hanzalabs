@@ -38,13 +38,13 @@ export default function Footer() {
                 {site.tagline}
               </p>
             </div>
-            <div className="flex flex-col items-start justify-between gap-8 lg:col-span-8 lg:flex-row lg:items-center">
-              <Reveal variant="mask" className="max-w-[600px]">
+            <div className="lg:col-span-8">
+              <Reveal variant="mask" className="max-w-[800px]">
                 <h2 className="text-h3">
                   Start your next big creative journey with HanzaLabs
                 </h2>
               </Reveal>
-              <div className="shrink-0">
+              <div className="mt-8">
                 <Button href="/contact">Let&apos;s Talk</Button>
               </div>
             </div>
