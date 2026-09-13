@@ -10,75 +10,87 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 function Tag({ label }: { label: string }) {
   return (
-    <span className="rounded-pill border border-ink/15 px-2.5 py-1 text-[13px] text-ink/70">
+    <span className="rounded-pill bg-ink/[0.06] px-3 py-1.5 text-[14px] text-ink">
       {label}
     </span>
   );
 }
 
+function MarqueeText() {
+  return (
+    <Marquee duration={30}>
+      <div className="flex items-center">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <div key={i} className="flex items-center">
+            <span className="whitespace-nowrap px-6 text-[13vw] font-medium leading-none tracking-tightest lg:px-9 lg:text-[9.5vw]">
+              Studio Portfolio
+            </span>
+            {/* diagonal slash separator (matches Figma) */}
+            <span className="h-[0.66em] w-[0.09em] shrink-0 -skew-x-[18deg] rounded-sm bg-ink/25" />
+          </div>
+        ))}
+      </div>
+    </Marquee>
+  );
+}
+
 export default function Works() {
   return (
-    <section className="overflow-hidden py-14 lg:py-20">
-      {/* scrolling headline */}
-      <div className="border-y border-ink/10 py-6 lg:py-8">
-        <Marquee duration={26}>
-          <div className="flex items-center">
-            {Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="flex items-center">
-                <span className="whitespace-nowrap px-6 text-[13vw] font-medium leading-none tracking-tightest lg:text-[9vw]">
-                  Studio Portfolio
-                </span>
-                <span className="mx-2 h-[0.7em] w-[0.7em] rotate-45 bg-primary lg:mx-4" />
-              </div>
-            ))}
-          </div>
-        </Marquee>
+    <section className="relative py-16 lg:py-24">
+      <div className="container-site relative z-20">
+        <p className="eyebrow mb-8 lg:mb-10">Works</p>
       </div>
 
-      <div className="container-site mt-14 lg:mt-20">
-        <p className="eyebrow mb-10">Works</p>
+      <div className="relative">
+        {/* pinned, centered marquee that stays put while cards scroll */}
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <div className="sticky top-1/2 w-full -translate-y-1/2">
+            <MarqueeText />
+          </div>
+        </div>
 
-        <div className="mx-auto flex max-w-[980px] flex-col gap-16 lg:gap-24">
-          {projects.map((p, i) => (
-            <motion.article
-              key={p.slug}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-12% 0px" }}
-              transition={{ duration: 0.8, ease }}
-            >
-              <Link
-                href="/work"
-                data-cursor="hover"
-                data-cursor-text="View"
-                className="group block"
+        {/* work cards on top */}
+        <div className="container-site relative z-10">
+          <div className="mx-auto flex max-w-[880px] flex-col gap-14 lg:gap-20">
+            {projects.map((p, i) => (
+              <motion.article
+                key={p.slug}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-12% 0px" }}
+                transition={{ duration: 0.8, ease }}
               >
-                <div className="overflow-hidden rounded-card">
+                <Link
+                  href="/work"
+                  data-cursor="hover"
+                  data-cursor-text="View"
+                  className="group block overflow-hidden rounded-card bg-white"
+                >
                   <Media
                     src={p.image}
                     alt={p.name}
                     className="aspect-[914/490] w-full transition-transform duration-[900ms] ease-smooth group-hover:scale-[1.04]"
                   />
-                </div>
-                <div className="mt-6 flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
-                  <h3 className="text-h4">
-                    <span className="text-ink/40 mr-3 text-[0.5em] align-top">
-                      0{i + 1}
-                    </span>
-                    {p.name}
-                  </h3>
-                  <div className="lg:max-w-[300px]">
-                    <p className="text-[15px] text-ink/60">{p.description}</p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {p.tags.map((t) => (
-                        <Tag key={t} label={t} />
-                      ))}
+                  <div className="flex flex-col gap-5 p-6 lg:flex-row lg:items-start lg:justify-between lg:p-8">
+                    <h3 className="text-h4">
+                      <span className="mr-3 align-top text-[0.5em] text-ink/40">
+                        0{i + 1}
+                      </span>
+                      {p.name}
+                    </h3>
+                    <div className="lg:max-w-[300px]">
+                      <p className="text-[16px] text-ink">{p.description}</p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {p.tags.map((t) => (
+                          <Tag key={t} label={t} />
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            </motion.article>
-          ))}
+                </Link>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
