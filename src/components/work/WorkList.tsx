@@ -27,9 +27,9 @@ export default function WorkList() {
           />
           <div className="flex flex-col gap-4 p-6 sm:flex-row sm:items-start sm:justify-between lg:p-8">
             <h3 className="text-h4">{p.name}</h3>
-            <div className="sm:max-w-[300px]">
+            <div className="sm:max-w-[380px]">
               <p className="text-[16px] text-ink">{p.description}</p>
-              <div className="mt-3 flex flex-wrap gap-2">
+              <div className="mt-3 flex flex-nowrap gap-2">
                 {p.tags.map((t) => (
                   <span
                     key={t}

@@ -52,7 +52,7 @@ export default function Works() {
         {/* work cards on top */}
         <div className="container-site relative z-10">
           <div className="mx-auto flex max-w-[880px] flex-col gap-14 lg:gap-20">
-            {projects.map((p, i) => (
+            {projects.map((p) => (
               <motion.article
                 key={p.slug}
                 initial={{ opacity: 0, y: 40 }}
@@ -72,15 +72,10 @@ export default function Works() {
                     className="aspect-[914/490] w-full transition-transform duration-[900ms] ease-smooth group-hover:scale-[1.04]"
                   />
                   <div className="flex flex-col gap-5 p-6 lg:flex-row lg:items-start lg:justify-between lg:p-8">
-                    <h3 className="text-h4">
-                      <span className="mr-3 align-top text-[0.5em] text-ink/40">
-                        0{i + 1}
-                      </span>
-                      {p.name}
-                    </h3>
-                    <div className="lg:max-w-[300px]">
+                    <h3 className="text-h4">{p.name}</h3>
+                    <div className="lg:max-w-[380px]">
                       <p className="text-[16px] text-ink">{p.description}</p>
-                      <div className="mt-4 flex flex-wrap gap-2">
+                      <div className="mt-4 flex flex-nowrap gap-2">
                         {p.tags.map((t) => (
                           <Tag key={t} label={t} />
                         ))}
