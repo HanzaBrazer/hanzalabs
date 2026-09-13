@@ -25,8 +25,8 @@ function MarqueeText() {
             <span className="whitespace-nowrap px-6 text-[13vw] font-medium leading-none tracking-tightest lg:px-9 lg:text-[9.5vw]">
               Studio Portfolio
             </span>
-            {/* diagonal slash separator (matches Figma) */}
-            <span className="h-[0.66em] w-[0.09em] shrink-0 -skew-x-[18deg] rounded-sm bg-ink/25" />
+            {/* diagonal slash separator (sized to the font, matches Figma) */}
+            <span className="h-[11vw] w-[1.6vw] shrink-0 -skew-x-[18deg] rounded-[2px] bg-ink/25 lg:h-[8vw] lg:w-[1.1vw]" />
           </div>
         ))}
       </div>
