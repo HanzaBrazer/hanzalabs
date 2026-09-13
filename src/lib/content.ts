@@ -245,7 +245,7 @@ export const services: Service[] = [
 export const aboutValues = [
   {
     title: "Scale Globally",
-    body: "",
+    body: "Build brand and design systems engineered to expand — across markets, languages, and platforms — so your growth is never limited by your interface. Every component is made to flex, adapt, and travel.",
   },
   {
     title: "Inspire Trust",
@@ -253,7 +253,7 @@ export const aboutValues = [
   },
   {
     title: "Shape the Future",
-    body: "",
+    body: "Look past passing trends to define what comes next. We prototype bold ideas and craft forward-looking experiences that keep your brand relevant, distinctive, and a step ahead.",
   },
 ];
 
