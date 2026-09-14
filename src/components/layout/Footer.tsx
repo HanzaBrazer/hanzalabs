@@ -55,7 +55,7 @@ export default function Footer() {
             <div className="lg:col-span-4">
               <div className="border-t border-ink/12 pt-6">
                 <h3 className="text-h6">Newsletter</h3>
-                <p className="mt-2 max-w-[280px] text-[15px] text-ink/55">
+                <p className="mt-2 max-w-[280px] text-[16px] text-ink/55">
                   Get the latest insights on payments.
                 </p>
                 <form
@@ -76,7 +76,7 @@ export default function Footer() {
                   <button
                     type="submit"
                     data-cursor="hover"
-                    className="flex h-[38px] items-center rounded-lg bg-ink px-4 text-[13px] font-medium text-white transition-colors hover:bg-ink/85"
+                    className="flex h-[38px] items-center rounded-lg bg-ink px-4 text-[14px] font-medium text-white transition-colors hover:bg-ink/85"
                   >
                     {sent ? "Joined ✓" : "Subscribe"}
                   </button>
@@ -112,8 +112,8 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="mt-12 border-t border-ink/12 pt-6 text-center text-[14px] text-ink/50">
-            Made By Flownix- License | Powered By Webflow
+          <div className="mt-12 border-t border-ink/12 pt-6 text-center text-[16px] text-ink/55">
+            Made By hanza - License | Powered By Vercel
           </div>
         </div>
       </div>
